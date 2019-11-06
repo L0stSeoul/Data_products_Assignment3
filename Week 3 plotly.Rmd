@@ -1,0 +1,21 @@
+---
+title: "Assignment 3"
+author: "Trevor"
+date: "6 November 2019"
+output: ioslides_presentation
+---
+
+## Billboard hits debuting in the top 50
+
+```{r cars, echo = FALSE, eval=TRUE, message=FALSE, warning=FALSE}
+library(plotly)
+library(dplyr)
+library(tidyr)
+data("billboard")
+hits <- select(billboard, track, date.entered, wk1)
+hits <- subset(hits, wk1<50)
+plot_ly(hits, x = ~date.entered, y = ~track)
+```
+
+
+
